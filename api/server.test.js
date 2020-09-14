@@ -12,7 +12,7 @@ describe("server", function () {
         it("should respond with 500", function () {
             return supertest(server)
                 .post("/api/auth/register")
-                .send({username: "student3", password: "abc123"})
+                .send({username: "student1", password: "abc123"})
                 .then(res => {
                     expect(res.status).toBe(500);
                 });
@@ -21,7 +21,7 @@ describe("server", function () {
         it("should respond with bad request", function () {
             return supertest(server)
                 .post("/api/auth/register")
-                .send({username: "student3"})
+                .send({username: "student1"})
                 .then(res => {
                     expect(res.status).toBe(400);
                 });
@@ -31,7 +31,7 @@ describe("server", function () {
         it("should respond with 201 OK", function () {
             return supertest(server)
                 .post("/api/auth/login")
-                .send({username: "student3", password: "abc123"})
+                .send({username: "student1", password: "abc123"})
                 .then(res => {
                     expect(res.status).toBe(200);
                 });
@@ -39,7 +39,7 @@ describe("server", function () {
         it("should respond with 400", function () {
             return supertest(server)
                 .post("/api/auth/login")
-                .send({username: "student3", password: "abc123"})
+                .send({username: "student1", password: "abc123"})
                 .then(res => {
                     expect(res.status).toBe(200);
                 });
